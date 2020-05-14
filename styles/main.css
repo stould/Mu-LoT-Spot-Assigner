@@ -1,6 +1,11 @@
-.test {
+.playerName {
     position: absolute;
     color: white;
     -webkit-text-stroke-width: 0.2px;
-    -webkit-text-stroke-color: yellow;
+    -webkit-text-stroke-color: black;
+    font-size: 12px;
+}
+
+.container {
+    position: relative;
 }
