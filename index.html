@@ -5,12 +5,21 @@
     </head>
 
     <body>
+        <label for="playerName">Player name:</label><br>
+        <input type="text" id="playerName" name="playerName"><br>
+
+        <label for="playerLevel">Player level:</label><br>
+        <input type="text" id="playerLevel" name="playerLevel"><br><br>
+        <button id="regPlayerBtn" type="button">Register Player</button>
+        <br><br>
+        <div id="previePlayers">Registered players:</div><br>
         <div style="display: inline-block;">
-            <button id="assignBtn" type="button">Assign/Re-assign</button> <br/><br/>
             <div class="container">
                 <img src="images/map.png" id="map">
             </div>
+            <button id="assignBtn" type="button">Assign players to spots</button> <br/><br/>
         </div>
+        
     </body>
     <script src="build/lib.js"></script>
 </html>
