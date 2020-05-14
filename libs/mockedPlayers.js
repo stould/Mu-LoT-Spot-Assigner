@@ -9,7 +9,7 @@ export const PLAYERS = [
     },
     {
         name: 'Leif',
-        level: 537,
+        level: 437,
     },
     {
         name: 'Wayne',
@@ -146,5 +146,17 @@ export const PLAYERS = [
     {
         name: 'Jeannie',
         level: 642,
+    },
+    {
+        name: 'Test001',
+        level: 508,
+    },
+    {
+        name: 'Test002',
+        level: 508,
+    },
+    {
+        name: 'Test003',
+        level: 609,
     },
 ];

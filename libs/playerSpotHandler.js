@@ -1,4 +1,4 @@
-import  {MAX_MEMBER_PER_SPOT,} from '../libs/constants';
+import  {MAX_MEMBER_PER_SPOT, MAX_SPOTS,} from '../libs/constants';
 import  {shuffleArray,} from '../libs/helper';
 
 export function playerGrantedLevel(playerLevel) {
@@ -39,6 +39,12 @@ export function assignSpots(spots, players) {
         splitedSpots[spot.spotLevel].push(spot);
     }
 
+    var sortedSpots = [
+        ...splitedSpots['easy'],
+        ...splitedSpots['medium'],
+        ...splitedSpots['hard'],
+    ];
+
     var playersGrantedLevel = new Map();
     playersGrantedLevel['easy'] = [];
     playersGrantedLevel['medium'] = [];
@@ -53,34 +59,52 @@ export function assignSpots(spots, players) {
     shuffleArray(playersGrantedLevel['medium']);
     shuffleArray(playersGrantedLevel['hard']);
 
-    var wholePlayers = [
+    var sortedPlayers = [
         ...playersGrantedLevel['easy'], 
         ...playersGrantedLevel['medium'],
         ...playersGrantedLevel['hard'],
     ];
 
     var asnwer = [];
-    var n = wholePlayers.length;
-    var m = spots.length;
-    i = 0;
-    j = 0;
+    var n = sortedPlayers.length;
+    var m = sortedSpots.length;
+    
 
-    while(i < n && j < m) {
+    if(n <= MAX_SPOTS) {
+        console.log('A');
+        i = 0;
+        j = 0;
+        while(i < n && j < m) {
+            asnwer.push({
+                players: [sortedPlayers[i],],
+                spot: sortedSpots[j],
+            });
 
-        var assignedSpot = {
-            spot: spots[j],
-            players: [wholePlayers[i],],
-        };
+            i += 1;
+            j += 1;
+        }
+    } else {
+        i = 0;
+        j = 0;
+        while(i < n && j < m) {
+            asnwer.push({
+                players: [sortedPlayers[i],],
+                spot: sortedSpots[j],
+            });
 
-        var counter = 1;
-        while(counter < MAX_MEMBER_PER_SPOT && i + counter < n) {
-            assignedSpot.players.push(wholePlayers[i + counter]);
-            counter++;
+            i += 1;
+            j += 1;
         }
 
-        asnwer.push(assignedSpot);
-        i += counter;
-        j += 1;
+        while(i < n) {
+            j = 0;
+            while(i < n && j < m) {
+                asnwer[j].players.push(sortedPlayers[i]);
+                console.log(asnwer[j]);
+                i += 1;
+                j += 1;
+            }
+        }
     }
 
     return asnwer;

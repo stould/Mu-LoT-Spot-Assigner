@@ -9,14 +9,12 @@ import  {assignSpots,} from '../libs/playerSpotHandler';
 (function() {
     
     var assignBtn = document.querySelector('#assignBtn');
-    console.log(assignBtn);
 
     assignBtn.addEventListener('click', function(event) {
         var container = document.querySelector('.container');
 
         var elementsOnContainer = document.getElementsByClassName('playerName');
         while(elementsOnContainer[0]) {
-            console.log(elementsOnContainer[0]);
             elementsOnContainer[0].parentNode.removeChild(elementsOnContainer[0]);
         }
 

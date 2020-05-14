@@ -1,4 +1,4 @@
-export const MAX_MEMBER_PER_SPOT = 2;
+export const MAX_SPOTS = 19;
 
 export const SPOTS = [
     {
