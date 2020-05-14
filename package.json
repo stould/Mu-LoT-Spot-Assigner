@@ -1,0 +1,46 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "build": "babel libs/setup.js > build/setup.bundle.js",
+    "build-browser": "browserify build/setup.bundle.js > build/lib.js",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Vinicius Zibetti Resko",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
+    "eslint": "^5.13.0",
+    "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "browserify": "^16.2.3"
+  }
+}
