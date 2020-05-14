@@ -97,13 +97,10 @@ export function assignSpots(spots, players) {
         }
 
         while(i < n) {
-            j = 0;
-            while(i < n && j < m) {
-                asnwer[j].players.push(sortedPlayers[i]);
-                console.log(asnwer[j]);
-                i += 1;
-                j += 1;
-            }
+            asnwer[j % m].players.push(sortedPlayers[i]);
+            console.log(asnwer[j % m]);
+            i += 1;
+            j += 1;
         }
     }
 
