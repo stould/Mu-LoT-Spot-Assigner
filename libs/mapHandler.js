@@ -1,14 +1,8 @@
 import  {loadResourceAsHtml,} from '../libs/resourcesHandler';
 import  {SPOTS,} from '../libs/constants';
-import  {PLAYERS,} from '../libs/mockedPlayers';
 import  {assignSpots,} from '../libs/playerSpotHandler';
 
-export function cleanCurrentPlayerSpots() {
-    var elementsOnContainer = document.getElementsByClassName('playerName');
-    while(elementsOnContainer[0]) {
-        elementsOnContainer[0].parentNode.removeChild(elementsOnContainer[0]);
-    }
-}
+
 
 export function placePlayersOnMap(playerLabelHeightDistance, players = null) {
     var mapPlayerNamesProps = [
@@ -43,4 +37,12 @@ export function placePlayersOnMap(playerLabelHeightDistance, players = null) {
             j += 1;
         }
     }
+}
+
+export function setupMapHandler(playerHandler, formHandler) {
+    var assignBtn = document.querySelector('#assignBtn');
+    assignBtn.addEventListener('click', function() {
+        formHandler.cleanCurrentPlayerSpots();
+        placePlayersOnMap(12, playerHandler.getRegisteredPlayers());
+    });
 }

@@ -69,36 +69,21 @@ export function assignSpots(spots, players) {
     var n = sortedPlayers.length;
     var m = sortedSpots.length;
     
+    i = 0;
+    j = 0;
+    while(i < n && j < m) {
+        asnwer.push({
+            players: [sortedPlayers[i],],
+            spot: sortedSpots[j],
+        });
 
-    if(n <= MAX_SPOTS) {
-        console.log('A');
-        i = 0;
-        j = 0;
-        while(i < n && j < m) {
-            asnwer.push({
-                players: [sortedPlayers[i],],
-                spot: sortedSpots[j],
-            });
+        i += 1;
+        j += 1;
+    }
 
-            i += 1;
-            j += 1;
-        }
-    } else {
-        i = 0;
-        j = 0;
-        while(i < n && j < m) {
-            asnwer.push({
-                players: [sortedPlayers[i],],
-                spot: sortedSpots[j],
-            });
-
-            i += 1;
-            j += 1;
-        }
-
+    if(n > MAX_SPOTS) {
         while(i < n) {
             asnwer[j % m].players.push(sortedPlayers[i]);
-            console.log(asnwer[j % m]);
             i += 1;
             j += 1;
         }
