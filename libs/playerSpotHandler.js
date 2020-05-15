@@ -1,7 +1,7 @@
-import  {MAX_MEMBER_PER_SPOT, MAX_SPOTS,} from '../libs/constants';
+import  {MAX_SPOTS,} from '../libs/constants';
 import  {shuffleArray,} from '../libs/helper';
 
-export function playerGrantedLevel(playerLevel) {
+function playerGrantedLevel(playerLevel) {
     if(playerLevel <= 500) {
         return 'easy';
     } else if(playerLevel <= 600) {

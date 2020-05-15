@@ -1,15 +1,2 @@
-.playerName {
-    position: absolute;
-    color: white;
-    -webkit-text-stroke-width: 0.3px;
-    -webkit-text-stroke-color: black;
-    font-size: 12px;
-}
-
-#assignBtn {
-    width: 100%;
-}
-
-.container {
-    position: relative;
-}
+@import "playerMap.css";
+@import "playerPreviewLabel.css";

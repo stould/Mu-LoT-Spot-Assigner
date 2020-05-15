@@ -4,14 +4,14 @@ import  {assignSpots,} from '../libs/playerSpotHandler';
 
 
 
-export function placePlayersOnMap(playerLabelHeightDistance, players = null) {
+function placePlayersOnMap(playerLabelHeightDistance, players) {
     var mapPlayerNamesProps = [
         {
             name: 'class',
-            value: 'playerName',
+            value: 'playerNameLabel',
         },
     ];
-    var container = document.querySelector('.container');
+    var container = document.querySelector('.mapContainer');
 
     const assignedSpots = assignSpots(SPOTS, players);
     
@@ -40,9 +40,9 @@ export function placePlayersOnMap(playerLabelHeightDistance, players = null) {
 }
 
 export function setupMapHandler(playerHandler, formHandler) {
-    var assignBtn = document.querySelector('#assignBtn');
-    assignBtn.addEventListener('click', function() {
-        formHandler.cleanCurrentPlayerSpots();
+    var assignMapBtn = document.querySelector('#assignMapBtn');
+    assignMapBtn.addEventListener('click', function() {
+        formHandler.clearCurrentPlayersFromMap();
         placePlayersOnMap(12, playerHandler.getRegisteredPlayers());
     });
 }
