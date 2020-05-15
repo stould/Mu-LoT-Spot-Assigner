@@ -38,12 +38,6 @@ export const SPOTS = [
         spotLevel: 'easy',
     },
     {
-        width: 215,
-        height: 195,
-        number: 7,
-        spotLevel: 'easy',
-    },
-    {
         width: 266,
         height: 223,
         number: 8,
