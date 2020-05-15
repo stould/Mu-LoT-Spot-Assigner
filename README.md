@@ -1,5 +1,7 @@
-# To-my-Love
-Simple Javascript game to celebrate my girlfriend's birthday.
+# Mu LoT Spot Assigner
+Simple easy to use spot assigner to Land of Trials on Mu Online. Usually you have less spots than players.
+
+The system is based on player level and spot difficulty. Weaker players will probably get weaker spots)
 
 # Installation instructions
 
