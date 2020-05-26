@@ -56,14 +56,14 @@ function setupRegisterPlayer(playerHandler, localStorageHandler) {
     regPlayerBtn.addEventListener('click', function() {
 
         var playerName = document.querySelector('#playerName').value;
-        var playerLevel = document.querySelector('#playerLevel').value;
+        var playerLevel = document.querySelector('#playerLevel').selectedIndex;
 
-        if(isNaN(playerLevel) || !playerName.trim() || !playerLevel) {
-            alert('Please fill out player name and level.');
+        if(!playerName.trim()) {
+            alert('Please fill out player name.');
         } else {
             var player = {
                 name: playerName,
-                level: parseInt(playerLevel),
+                level: playerLevel,
             };
 
             var playerLabelButton = addPlayerToPreview(player);

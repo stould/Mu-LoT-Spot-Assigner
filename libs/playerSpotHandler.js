@@ -2,9 +2,9 @@ import  {MAX_SPOTS,} from '../libs/constants';
 import  {shuffleArray,} from '../libs/helper';
 
 function playerGrantedLevel(playerLevel) {
-    if(playerLevel <= 500) {
+    if(playerLevel == 0) {
         return 'easy';
-    } else if(playerLevel <= 600) {
+    } else if(playerLevel == 1) {
         return 'medium';
     } else {
         return 'hard';

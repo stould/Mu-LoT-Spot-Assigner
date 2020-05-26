@@ -6,29 +6,53 @@
     </head>
 
     <body>
-        <label for="playerName">Player name:</label><br>
-        <input type="text" id="playerName" name="playerName"><br>
-        <label for="playerLevel">Player level:</label><br>
-        <input type="text" id="playerLevel" name="playerLevel"><br><br>
-        <button id="regPlayerBtn" type="button">
-            Register Player
-        </button>
-        <br><br>
-        <div>
-            Registered players:
-            <button id="clearPlayers" type="button">
-                Clear Players
-            </button>
-        </div>
-        <div id="previewPlayers" style="max-width: 487px;"></div><br>
-        <div style="display: inline-block;">
-            <div class="mapContainer">
-                <img src="images/map.png" id="map">
+        <div class="pageContainer">
+            <div class="content-wrap">
+                <div class="row">
+                    <div class="column">
+                        <div class="form">
+                            <label for="playerName">Player name:</label><br>
+                            <input type="text" id="playerName" name="playerName"><br>
+                            <p></p>
+                            <label for="playerLevel">Player level:</label><br>
+                            <div>
+                                <select name="playerLevel" id="playerLevel">
+                                    <option value="weak">Weak (Débil)</option>
+                                    <option value="medium">Medium (Medio)</option>
+                                    <option value="strong">Strong (Fuerte)</option>
+                                </select>
+                                <p></p>
+                            </div>
+                            <button id="regPlayerBtn" type="button">
+                                Register Player
+                            </button>
+                        </div>
+                        <div class="form">
+                            <button id="clearPlayers" type="button">
+                                Clear Players
+                            </button>
+                        
+                            <p></p>
+                            <div>
+                                Registered players:
+                            </div>
+                            <div id="previewPlayers">
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form">
+                            <div class="mapContainer">
+                                <img src="images/map.png" id="map">
+                            </div>
+                            <button id="assignMapBtn" type="button">
+                                Assign players to spots
+                            </button>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button id="assignMapBtn" type="button">
-                Assign players to spots
-            </button>
-            <br/><br/>
         </div>
         <div class="footer">
             &copy; 2020 Vinícius Zibetti Resko 

@@ -1,0 +1,16 @@
+.form {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 487px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    float: left;
+    margin-left: 10px;
+}

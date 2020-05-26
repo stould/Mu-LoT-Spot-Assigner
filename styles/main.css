@@ -1,8 +1,17 @@
 @import "playerMap.css";
 @import "playerPreviewLabel.css";
+@import "form.css";
+
+.pageContainer {
+    position: relative;
+}
+
+.content-wrap {
+    padding-bottom: 20px;    /* Footer height */
+}
 
 .footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
