@@ -51,28 +51,41 @@ function addPlayerToPreview(player) {
     return playerLabelSpan;
 }
 
+function registerPlayer(playerHandler, localStorageHandler) {
+    var playerName = document.querySelector('#playerName').value.trim();
+    var playerLevel = document.querySelector('#playerLevel').selectedIndex;
+
+    if(!playerName) {
+        alert('Please fill out player name.');
+    } else if(playerHandler.playerExists(playerName)) {
+        alert('There is already a player with the same name.');
+    } else {
+        var player = {
+            name: playerName,
+            level: playerLevel,
+        };
+
+        var playerLabelButton = addPlayerToPreview(player);
+        addDeleteEventOnPlayerLabelButton(playerLabelButton, playerHandler, localStorageHandler);
+        playerHandler.registerPlayer(player, localStorageHandler);
+    }
+}
+
 function setupRegisterPlayer(playerHandler, localStorageHandler) {
-    var regPlayerBtn = document.querySelector('#regPlayerBtn');
+    var regPlayerBtn = document.querySelector('#regPlayerBtn');    
+    var playerNameInputBox = document.querySelector('#playerName');
+
     regPlayerBtn.addEventListener('click', function() {
+        registerPlayer(playerHandler, localStorageHandler);
+        playerNameInputBox.value = '';
+        playerNameInputBox.focus();
+    });
 
-        var playerName = document.querySelector('#playerName').value;
-        var playerLevel = document.querySelector('#playerLevel').selectedIndex;
-
-        if(!playerName.trim()) {
-            alert('Please fill out player name.');
-        } else {
-            var player = {
-                name: playerName,
-                level: playerLevel,
-            };
-
-            var playerLabelButton = addPlayerToPreview(player);
-            addDeleteEventOnPlayerLabelButton(playerLabelButton, playerHandler, localStorageHandler);
-
-            playerHandler.registerPlayer(
-                player, 
-                localStorageHandler,
-            );
+    playerNameInputBox.addEventListener('keypress', function(e) {
+        if(e.key == 'Enter') {
+            registerPlayer(playerHandler, localStorageHandler);
+            playerNameInputBox.value = '';
+            playerNameInputBox.focus();
         }
     });
 }

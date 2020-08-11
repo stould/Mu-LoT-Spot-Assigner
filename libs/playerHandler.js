@@ -21,6 +21,13 @@ export function clearRegisteredPlayers() {
     }
 }
 
+export function playerExists(playerName) {
+    const filter = registeredPlayers.filter((player) => {
+        return playerName == player.name;
+    });
+    return filter.length > 0;
+}
+
 export function getRegisteredPlayers() {
     return registeredPlayers;
 }
