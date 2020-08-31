@@ -63,6 +63,7 @@ function registerPlayer(playerHandler, localStorageHandler) {
         var player = {
             name: playerName,
             level: playerLevel,
+            privilege: false,
         };
 
         var playerLabelButton = addPlayerToPreview(player);
@@ -116,9 +117,22 @@ export function setupFormHandler(playerHandler, localStorageHandler) {
     setupClearPlayers(playerHandler, localStorageHandler);
 }
 
-export function clearCurrentPlayersFromMap() {
+export function clearCurrentPlayersFromMap(exceptions) {
     var elementsOnContainer = document.getElementsByClassName('playerNameLabel');
-    while(elementsOnContainer[0]) {
-        elementsOnContainer[0].parentNode.removeChild(elementsOnContainer[0]);
+    if(exceptions == null) {
+        while(elementsOnContainer[0]) {
+            elementsOnContainer[0].parentNode.removeChild(elementsOnContainer[0]);
+        }
+    } else {
+        var filteredNames = exceptions.map((player) => player.name);
+        let exceptionCount = 0;
+        while(elementsOnContainer[exceptionCount]) {
+            const value = elementsOnContainer[exceptionCount].innerHTML;
+            if(filteredNames.includes(value)) {
+                exceptionCount++;
+                continue;
+            }
+            elementsOnContainer[exceptionCount].parentNode.removeChild(elementsOnContainer[exceptionCount]);
+        }
     }
 }

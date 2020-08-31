@@ -1,4 +1,4 @@
-import  {MAX_SPOTS,} from '../libs/constants';
+import  {HS_SPOTS, REGULAR_SPOTS} from '../libs/constants';
 import  {shuffleArray,} from '../libs/helper';
 
 function playerGrantedLevel(playerLevel) {
@@ -26,7 +26,7 @@ function playerGrantedLevel(playerLevel) {
  * @param array {players}
  * 
  */
-export function assignSpots(spots, players) {
+export function assignSpots(spots, players, spotType) {
     var splitedSpots = new Map();
 
     splitedSpots['easy'] = [];
@@ -71,6 +71,7 @@ export function assignSpots(spots, players) {
     
     i = 0;
     j = 0;
+
     while(i < n && j < m) {
         asnwer.push({
             players: [sortedPlayers[i],],
@@ -81,7 +82,7 @@ export function assignSpots(spots, players) {
         j += 1;
     }
 
-    if(n > MAX_SPOTS) {
+    if(n > (spotType == 'hs' ? HS_SPOTS.length : REGULAR_SPOTS.length)) {
         while(i < n) {
             asnwer[j % m].players.push(sortedPlayers[i]);
             i += 1;

@@ -10,6 +10,10 @@
     font-size: 12px;
 }
 
-#assignMapBtn {
+#assignMapHsBtn {
+    width: 100%;
+}
+
+#assignMapRegularBtn {
     width: 100%;
 }

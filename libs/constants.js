@@ -1,6 +1,13 @@
-export const MAX_SPOTS = 19;
+export const HS_SPOTS = [
+    {
+        width: 66,
+        height: 321,
+        number: 1,
+        spotLevel: 'easy',
+    },
+];
 
-export const SPOTS = [
+export const REGULAR_SPOTS = [
     {
         width: 68,
         height: 251,
@@ -38,6 +45,12 @@ export const SPOTS = [
         spotLevel: 'easy',
     },
     {
+        width: 215,
+        height: 198,
+        number: 7,
+        spotLevel: 'medium',
+    },
+    {
         width: 266,
         height: 223,
         number: 8,
@@ -50,7 +63,7 @@ export const SPOTS = [
         spotLevel: 'hard',
     },
     {
-        width: 418,
+        width: 419,
         height: 252,
         number: 10,
         spotLevel: 'hard',
@@ -68,7 +81,7 @@ export const SPOTS = [
         spotLevel: 'hard',
     },
     {
-        width: 204,
+        width: 205,
         height: 111,
         number: 13,
         spotLevel: 'hard',
@@ -107,6 +120,12 @@ export const SPOTS = [
         width: 80,
         height: 47,
         number: 19,
+        spotLevel: 'hard',
+    },
+    {
+        width: 335,
+        height: 79,
+        number: 20,
         spotLevel: 'hard',
     },
 ];

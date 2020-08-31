@@ -9,6 +9,15 @@ export function registerPlayer(player, localStorageHandler) {
     localStorageHandler.updateRegisteredPlayers(registeredPlayers);
 }
 
+export function updatePlayerPrivilegeTemporarly(targetPlayer, newPrivilege) {
+    for(let i = 0; i < registeredPlayers.length; i++) {
+        if(targetPlayer.name == registeredPlayers[i].name) {
+            targetPlayer.privilege = newPrivilege;
+            break;
+        }
+    }
+}
+
 export function removePlayerByName(playerName) {
     registeredPlayers = registeredPlayers.filter((player) => {
         return playerName !== player.name;
